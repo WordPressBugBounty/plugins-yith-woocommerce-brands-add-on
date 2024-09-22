@@ -1,0 +1,1 @@
+# plugins-yith-woocommerce-brands-add-on
