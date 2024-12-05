@@ -71,9 +71,6 @@ if ( ! class_exists( 'YITH_WCBR' ) ) {
 		 */
 		public function __construct() {
 
-			// load plugin-fw.
-			add_action( 'plugins_loaded', array( $this, 'plugin_fw_loader' ), 15 );
-
 			// register brand taxonomy.
 			add_action( 'init', array( $this, 'register_taxonomy' ) );
 
@@ -106,24 +103,6 @@ if ( ! class_exists( 'YITH_WCBR' ) ) {
 			add_action( 'woocommerce_product_duplicate', array( $this, 'woocommerce_product_duplicate' ), 10, 2 );
 
 			add_action( 'before_woocommerce_init', array( $this, 'declare_wc_features_support' ) );
-		}
-
-		/* === PLUGIN FW LOADER === */
-
-		/**
-		 * Loads plugin fw, if not yet created
-		 *
-		 * @return void
-		 * @since 1.0.0
-		 */
-		public function plugin_fw_loader() {
-			if ( ! defined( 'YIT_CORE_PLUGIN' ) ) {
-				global $plugin_fw_data;
-				if ( ! empty( $plugin_fw_data ) ) {
-					$plugin_fw_file = array_shift( $plugin_fw_data );
-					require_once $plugin_fw_file;
-				}
-			}
 		}
 
 		/* === TAXONOMY METHODS === */

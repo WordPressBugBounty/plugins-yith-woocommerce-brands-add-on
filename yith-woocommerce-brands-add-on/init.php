@@ -3,13 +3,14 @@
  * Plugin Name: YITH WooCommerce Brands Add-On
  * Plugin URI: https://yithemes.com/themes/plugins/yith-woocommerce-brands-add-on/
  * Description: <code><strong>YITH WooCommerce Brands Add-On</strong></code> allows organizing products by brand and improves your shop user experience and your visibility on search engines. Let your customers browse your shop based on their favourite brands with only a few clicks. <a href="https://yithemes.com/" target="_blank">Get more plugins for your e-commerce on <strong>YITH</strong></a>
- * Version: 2.28.0
+ * Version: 2.29.0
  * Author: YITH
  * Author URI: https://yithemes.com/
  * Text Domain: yith-woocommerce-brands-add-on
  * Domain Path: /languages/
- * WC requires at least: 9.1
- * WC tested up to: 9.3
+ * WC requires at least: 9.3
+ * WC tested up to: 9.5
+ * Requires Plugins: woocommerce
  *
  * @author YITH <plugins@yithemes.com>
  * @package YITH\Brands
@@ -34,7 +35,7 @@ if ( ! defined( 'YITH_WCBR_PLUGIN_NAME' ) ) {
 }
 
 if ( ! defined( 'YITH_WCBR_VERSION' ) ) {
-	define( 'YITH_WCBR_VERSION', '2.28.0' );
+	define( 'YITH_WCBR_VERSION', '2.29.0' );
 }
 
 if ( ! defined( 'YITH_WCBR_URL' ) ) {
@@ -70,18 +71,20 @@ if ( ! defined( 'YITH_WCBR_ASSETS_URL' ) ) {
 }
 
 
-/* Plugin Framework Version Check */
-if ( ! function_exists( 'yit_maybe_plugin_fw_loader' ) && file_exists( YITH_WCBR_DIR . 'plugin-fw/init.php' ) ) {
-	require_once YITH_WCBR_DIR . 'plugin-fw/init.php';
+// Plugin Framework Loader.
+if ( file_exists( plugin_dir_path( __FILE__ ) . 'plugin-fw/init.php' ) ) {
+	require_once plugin_dir_path( __FILE__ ) . 'plugin-fw/init.php';
 }
-yit_maybe_plugin_fw_loader( YITH_WCBR_DIR );
 
 if ( ! function_exists( 'yith_brands_constructor' ) ) {
 	/**
 	 * Plugin constructor.
 	 */
 	function yith_brands_constructor() {
-		load_plugin_textdomain( 'yith-woocommerce-brands-add-on', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+
+		if ( function_exists( 'yith_plugin_fw_load_plugin_textdomain' ) ) {
+			yith_plugin_fw_load_plugin_textdomain( 'yith-woocommerce-brands-add-on', basename( dirname( __FILE__ ) ) . '/languages' );
+		}
 
 		require_once YITH_WCBR_INC . 'functions.yith-wcbr.php';
 		require_once YITH_WCBR_INC . 'class-yith-wcbr.php';

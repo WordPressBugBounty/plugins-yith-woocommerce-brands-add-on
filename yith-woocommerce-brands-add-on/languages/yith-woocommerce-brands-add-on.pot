@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: YITH WooCommerce Brands Add-on\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/yith-woocommerce-brands-add-on\n"
-"POT-Creation-Date: 2024-09-24 12:09:33+00:00\n"
+"POT-Creation-Date: 2024-12-05 13:21:45+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -35,8 +35,8 @@ msgid "General Options"
 msgstr ""
 
 #: includes/class-yith-wcbr-admin.php:120
-#: includes/class-yith-wcbr-shortcode.php:62 includes/class-yith-wcbr.php:159
-#: includes/class-yith-wcbr.php:196
+#: includes/class-yith-wcbr-shortcode.php:62 includes/class-yith-wcbr.php:138
+#: includes/class-yith-wcbr.php:175
 msgid "Brands"
 msgstr ""
 
@@ -190,55 +190,55 @@ msgstr ""
 msgid "Displays products filtered by a brand."
 msgstr ""
 
-#: includes/class-yith-wcbr.php:160
+#: includes/class-yith-wcbr.php:139
 msgid "Brand"
 msgstr ""
 
-#: includes/class-yith-wcbr.php:161
+#: includes/class-yith-wcbr.php:140
 msgid "All brands"
 msgstr ""
 
-#: includes/class-yith-wcbr.php:162
+#: includes/class-yith-wcbr.php:141
 msgid "Edit brand"
 msgstr ""
 
-#: includes/class-yith-wcbr.php:163
+#: includes/class-yith-wcbr.php:142
 msgid "View brand"
 msgstr ""
 
-#: includes/class-yith-wcbr.php:164
+#: includes/class-yith-wcbr.php:143
 msgid "Update brand"
 msgstr ""
 
-#: includes/class-yith-wcbr.php:165
+#: includes/class-yith-wcbr.php:144
 msgid "Add new brand"
 msgstr ""
 
-#: includes/class-yith-wcbr.php:166
+#: includes/class-yith-wcbr.php:145
 msgid "New brand name"
 msgstr ""
 
-#: includes/class-yith-wcbr.php:167
+#: includes/class-yith-wcbr.php:146
 msgid "Parent brand"
 msgstr ""
 
-#: includes/class-yith-wcbr.php:168
+#: includes/class-yith-wcbr.php:147
 msgid "Parent brand:"
 msgstr ""
 
-#: includes/class-yith-wcbr.php:169
+#: includes/class-yith-wcbr.php:148
 msgid "Search brands"
 msgstr ""
 
-#: includes/class-yith-wcbr.php:170
+#: includes/class-yith-wcbr.php:149
 msgid "Separate brands with commas"
 msgstr ""
 
-#: includes/class-yith-wcbr.php:171
+#: includes/class-yith-wcbr.php:150
 msgid "No brands found"
 msgstr ""
 
-#: includes/class-yith-wcbr.php:172
+#: includes/class-yith-wcbr.php:151
 msgid "&larr; Go to brands"
 msgstr ""
 
@@ -254,12 +254,12 @@ msgstr ""
 msgid "Appearance"
 msgstr ""
 
-#: init.php:140
+#: init.php:143
 #. translators: %s is the plugin name.
 msgid "%s is enabled but not effective. It requires WooCommerce in order to work."
 msgstr ""
 
-#: init.php:158
+#: init.php:161
 #. translators: %s is the plugin name.
 msgid ""
 "You can't activate the free version of %s while you are using the premium "
