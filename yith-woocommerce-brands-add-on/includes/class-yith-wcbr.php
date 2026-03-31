@@ -75,7 +75,6 @@ if ( ! class_exists( 'YITH_WCBR' ) ) {
 			add_action( 'init', array( $this, 'register_taxonomy' ) );
 
 			// enqueue styles.
-			add_action( 'init', array( $this, 'register_scripts' ) );
 			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
 			add_filter( 'yith_wcan_product_taxonomy_type', array( $this, 'add_ajax_navigation_taxonomy' ) );
@@ -274,13 +273,12 @@ if ( ! class_exists( 'YITH_WCBR' ) ) {
 		}
 
 		/**
-		 * Register frontend scripts
+		 * Enqueue frontend scripts
 		 *
 		 * @return void
-		 * @since 1.3.0
+		 * @since 1.0.0
 		 */
-		public function register_scripts() {
-			// include payment form template.
+		public function enqueue_scripts() {
 			$template_name = 'brands.css';
 			$locations     = array(
 				trailingslashit( WC()->template_path() ) . 'yith-wcbr/' . $template_name,
@@ -300,21 +298,14 @@ if ( ! class_exists( 'YITH_WCBR' ) ) {
 			}
 
 			wp_register_style( 'yith-wcbr', $template, array(), YITH_WCBR_VERSION );
-		}
 
-		/**
-		 * Enqueue frontend scripts
-		 *
-		 * @return void
-		 * @since 1.0.0
-		 */
-		public function enqueue_scripts() {
 			/**
 			 * DO_ACTION: yith_wcbr_enqueue_frontend_style
 			 *
 			 * Allows to fire some action before enqueueing the plugin style.
 			 */
 			do_action( 'yith_wcbr_enqueue_frontend_style' );
+
 			wp_enqueue_style( 'yith-wcbr' );
 		}
 
